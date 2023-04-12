@@ -59,7 +59,9 @@ function SetClassActive() {
 }
 
 // Scroll to anchor ID using scrollTO event
-
+function scrollToSection(sec) {
+    sec.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+}
 
 /**
  * End Main Functions
@@ -71,7 +73,7 @@ function SetClassActive() {
 createNavbar();
 
 // Scroll to section on link click
-
+navbarList.addEventListener('click', scrollToSection(sec));
 
 // Set sections as active
 document.addEventListener('scroll', SetClassActive);
