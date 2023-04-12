@@ -30,6 +30,14 @@ const navbarList = document.getElementById('navbar__list');
  * Start Helper Functions
  * 
 */
+
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+*/
+
+// build the nav
 function createNavbar() {
     for (sec of sections) {
         listItem = document.createElement('li');
@@ -38,6 +46,7 @@ function createNavbar() {
     }
 }
 
+// Add class 'active' to section when near top of viewport
 function SetClassActive() {
     for (sec of sections) {
         if (sec.getBoundingClientRect().top >= 0) {
@@ -49,18 +58,6 @@ function SetClassActive() {
     }
 }
 
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-createNavbar();
-
-// Add class 'active' to section when near top of viewport
-document.addEventListener('scroll', SetClassActive);
-
 // Scroll to anchor ID using scrollTO event
 
 
@@ -71,9 +68,10 @@ document.addEventListener('scroll', SetClassActive);
 */
 
 // Build menu 
+createNavbar();
 
 // Scroll to section on link click
 
+
 // Set sections as active
-
-
+document.addEventListener('scroll', SetClassActive);
