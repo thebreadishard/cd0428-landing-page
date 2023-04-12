@@ -59,9 +59,6 @@ function SetClassActive() {
 }
 
 // Scroll to anchor ID using scrollTO event
-function scrollToSection(sec) {
-    sec.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-}
 
 /**
  * End Main Functions
@@ -73,7 +70,14 @@ function scrollToSection(sec) {
 createNavbar();
 
 // Scroll to section on link click
-navbarList.addEventListener('click', scrollToSection(sec));
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+    });
+    });
+});
 
 // Set sections as active
 document.addEventListener('scroll', SetClassActive);
