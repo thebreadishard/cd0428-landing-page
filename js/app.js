@@ -30,7 +30,7 @@ const navbarList = document.getElementById('navbar__list');
  * Start Helper Functions
  * 
 */
-function createNavbarItem() {
+function createNavbar() {
     for (sec of sections) {
         listItem = document.createElement('li');
         listItem.innerHTML = `<a class='menu__link' href='#${sec.getAttribute('id')}'>${sec.getAttribute('data-nav')}</a>`;
@@ -46,7 +46,7 @@ function createNavbarItem() {
 */
 
 // build the nav
-
+createNavbar();
 
 // Add class 'active' to section when near top of viewport
 
