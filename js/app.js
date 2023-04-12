@@ -38,6 +38,16 @@ function createNavbar() {
     }
 }
 
+function SetClassActive() {
+    for (sec of sections) {
+        if (sec.getBoundingClientRect().top >= 0) {
+            sec.classList.add('your-active-class');
+        }
+        else {
+            sec.classList.remove('your-active-class');
+        }
+    }
+}
 
 /**
  * End Helper Functions
@@ -49,7 +59,7 @@ function createNavbar() {
 createNavbar();
 
 // Add class 'active' to section when near top of viewport
-
+document.addEventListener('scroll', SetClassActive);
 
 // Scroll to anchor ID using scrollTO event
 
