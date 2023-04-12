@@ -33,7 +33,7 @@ const navbarList = document.getElementById('navbar__list');
 function createNavbarListItem() {
     for (sec of sections) {
         listItem = document.createElement('li');
-        listItem.innerHTML = `<li><a class='menu__link' href='#${sec.getAttribute('id')}'></a>`;
+        listItem.innerHTML = `<a class='menu__link' href='#${sec.getAttribute('id')}'></a>`;
         navbarList.appendChild(listItem);
     }
 }
